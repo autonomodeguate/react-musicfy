@@ -47,6 +47,7 @@
     "concurrently": "^6.3.0",
     "electron": "^15.3.0",
     "electron-builder": "^22.13.1",
+    "react-toastify": "^8.1.0",
     "wait-on": "^6.0.0"
   }
 }
