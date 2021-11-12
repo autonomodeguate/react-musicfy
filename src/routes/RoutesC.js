@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 // Pages 
 import { Home } from '../pages/Home/Home';
+import { Settings } from '../pages/Settings/Settings';
 
-export const RoutesC = () => {
+export const RoutesC = (props) => {
+    const { user, setReloadApp } = props;
     return (
         <Router>
             <div>
@@ -16,7 +18,7 @@ export const RoutesC = () => {
                         <h1>Artistas</h1>
                     </Route>
                     <Route path="/settings" exact>
-                        <h1>Settings</h1>
+                        <Settings user={ user } setReloadApp={ setReloadApp } />
                     </Route>
                 </Routes>
             </div>

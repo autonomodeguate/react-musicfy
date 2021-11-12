@@ -12,6 +12,7 @@ function App() {
 
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [reloadApp, setReloadApp] = useState(false);
 
   app.auth().onAuthStateChange(currentUser => {
 
@@ -31,7 +32,7 @@ function App() {
 
   return (
     <>
-      { !user ? <Auth /> : <LoggedLayout user={user} /> }
+      { !user ? <Auth /> : <LoggedLayout user={user} setReloadApp={setReloadApp} /> }
       <ToastContainer 
         position="top-center"
         autoClose={5000} 

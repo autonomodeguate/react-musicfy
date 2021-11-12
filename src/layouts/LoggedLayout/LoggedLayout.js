@@ -9,7 +9,7 @@ import './LoggedLayout.scss';
 
 export const LoggedLayout = (props) => {
 
-    const { user }  = props;
+    const { user, setReloadApp }  = props;
 
     return (
         <Router>
@@ -20,7 +20,7 @@ export const LoggedLayout = (props) => {
                     </Grid.Column>
                     <Grid.Column className="content" width={13}>
                         <WithNavigate user={user} />
-                        <RoutesC />
+                        <RoutesC user={ user } setReloadApp={setReloadApp} />
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>

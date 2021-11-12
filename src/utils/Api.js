@@ -13,3 +13,12 @@ export async function isUserAdmin(uid) {
     
     return response.exists;
 }
+
+export const reauthenticate = (password) => {
+    const user = app.auth().currentUser;
+    const credentials = app.auth().emailAuthProvider.credentials(
+        user.email,
+        password
+    )
+    return user.reautenticateWithCredential(credentials);
+}
